@@ -1,0 +1,103 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Calibri;
+}
+
+.delete-container {
+    height: 500px;
+    width: 60%;
+    margin: auto;
+    margin-top: 80px;
+    padding: 40px;
+    background-color: white;
+}
+
+.warning-word {
+    color: red;
+}
+
+.warning-container {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 184, 184);
+}
+
+.admin-infobox {
+    width: auto;
+    height: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+}
+
+.admin-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.admin-name-container {
+    display: flex;
+}
+
+.admin-name-container {
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.admin-email {
+    padding-left: 15px;
+    font-style: italic;
+}
+
+.delete-buttons {
+    margin-top: 15px;
+}
+
+.btn-delete-account {
+    background-color: #e43500;
+    font-size: 12px;
+    padding: 5px 18px;
+    border-radius: 4px;
+    color: white;
+    border-style: none;
+}
+
+.btn-delete-account:hover {
+    background: #fff;
+    color: black;
+    border: 1px solid #e43500;
+    cursor: pointer;
+}
+
+.btn-cancel-delete {
+    background-color: white;
+    font-size: 12px;
+    padding: 5px 18px;
+    border-radius: 4px;
+    color: black;
+    border-style: none;
+    font-weight: bold;
+}
+
+.btn-cancel-delete:hover {
+    background: #fff;
+    color: black;
+    border: 1px solid #1daf00;
+    cursor: pointer;
+}
+
+.admin-firstName {
+    margin-right: 0.5rem;
+}
+
+.admin-firstName,
+.admin-lastName {
+    font-weight: bold;
+}

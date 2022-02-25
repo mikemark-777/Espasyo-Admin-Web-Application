@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Espasyo Admin</title>
+        <link rel="shortcut icon" type="image/jpg" href="/images/espasyo_favicon.ico" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="/css/index.css" />
+    </head>
+
+    <body>
+
+        <div id="login_div" class="main-div">
+            <img class="logo-word" src="/images/espasyo_admin_logo_word.png" alt="logo">
+            <input type="email" placeholder="Email" id="email_field" />
+            <input type="password" placeholder="Password" id="password_field" />
+
+            <button class="btnLogin" onclick="login()">Login to Account</button><br>
+        </div>
+
+        <div id="error-container" class="error-message">
+            This is an error box
+        </div>
+
+        <!-- core firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <!-- SDK or firebase services -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+        <!-- firebase configuration and declarations -->
+        <script src="/js/firebaseConfig.js"></script>
+        <script src="/js/authentication.js"></script>
+        <script src="/js/database.js"></script>
+        <script src="/js/login.js"></script>
+
+
+        <script>
+            window.onload = noBack();
+
+            function noBack() {
+                window.history.forward();
+            }
+
+            function showSampleVariable() {
+                window.alert(getIsSuperAdmin());
+            }
+        </script>
+    </body>
+
+</html>

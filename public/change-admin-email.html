@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Change Admin Email</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/espasyo_favicon.ico" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/change-admin-email.css">
+    <script src="/js/a076d05399.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <div class="change-container">
+        <div class="delete-title">
+            <h3>Change Admin Email</h3>
+        </div>
+        <div class="admin-infobox">
+            <img class="admin-icon" src="/images/icon_admin.png" alt="admin_avatar">
+            <div class="admin-detailsbox">
+                <div class="admin-name-container">
+                    <div class="admin-firstName" id="adminFN">
+                        <h5>User&ensp;</h5>
+                    </div>
+                    <div class="admin-lastName" id="adminLN">
+                        <h5>user</h5>
+                    </div>
+                </div>
+                <div class="admin-email" id="adminEmail">
+                    <i>user@gmail.com</i>
+                </div>
+            </div>
+        </div>
+        <div class="new-email-container">
+            <input type="email" id="new-emailInput" class="new-emailInput" placeholder="New Email" required><br>
+        </div>
+        <div id="error-container" class="error-message">
+            New Password and Confirm Password is Empty
+        </div>
+        <div class="change-email-message">
+            <div class="info-container">
+                <h6 class="info-word">Information</h6>
+                Make sure to enter an existing email. An email verification will be sent to the email provided to verify its validity.
+            </div><br> Are you sure you want to change the existing email?
+        </div>
+        <div class="change-buttons">
+            <button class="btn-change-email" id="button-change-email">Change Email</button>
+            <button class="btn-cancel-change-email" id="button-cancel-change-email">Cancel</button>
+        </div>
+    </div>
+
+    <!-- core firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <!-- SDK or firebase services -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="/js/firebaseConfig.js"></script>
+    <script src="/js/authentication.js"></script>
+    <script src="/js/change-email.js"></script>
+    <script src="/js/database.js"></script>
+
+
+
+    <script>
+        window.onload = function() {
+
+            //will check if the logged in user is an admin or superadmin
+            if (getIsSuperAdmin() == "false") {
+                document.getElementById("btn-manage-admin").style.display = "none";
+            }
+
+            //will check if there will be an admin to change email
+            checkIfHasAdminToChangeEmail();
+
+            //will display the admin data whose email will be changed
+            displayAdminData_updateEmail();
+        }
+    </script>
+
+
+</body>
+
+</html>

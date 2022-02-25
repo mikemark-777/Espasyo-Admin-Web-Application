@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Home</title>
+        <link rel="shortcut icon" type="image/jpg" href="/images/espasyo_favicon.ico" />
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/home.css">
+        <script src="/js/a076d05399.js"></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    </head>
+
+    <body>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <label class="logo"></label>
+            <ul>
+                <li><a class="active" href="/home.html">Home</a></li>
+                <li><a id="btn-manage-admin" href="/manage-admin.html">Manage Admin</a></li>
+                <li><a href="/reports.html">Reports</a></li>
+                <li><a id="out" onclick="logout()"><b>Logout</b></a></li>
+            </ul>
+        </nav>
+
+        <div class="welcome-container">
+            <div class="wordings">
+                <b>
+                    <label class="logo-name">espasyo</label>
+                    <h3 id="description">Apartment, Boarding House <br>and Dormitory Finder</h3>
+                    <h4 id="description-extension">Search &#183; Advertise &#183; Rent</h4>
+                </b>
+                <div class="privacy-policy-container">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                </div>
+
+            </div>
+            <div class="welcome-image">
+                <img class="welcome-image" src="./images/welcome-image.png" alt="welcome-image">
+            </div>
+        </div>
+
+
+        <!-- core firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <!-- SDK or firebase services -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+        <script src="/js/firebaseConfig.js"></script>
+        <script src="/js/authentication.js"></script>
+
+        <script>
+            window.onload = function () {
+
+                if (getIsSuperAdmin() == "false") {
+                    document.getElementById("btn-manage-admin").style.display = "none";
+                }
+            }
+        </script>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Espasyo Admin</title>
+        <link rel="shortcut icon" type="image/jpg" href="./images/espasyo_favicon.ico" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="./css/privacy-policy.css" />
+    </head>
+
+    <body>
+
+        <div class="privacy-container">
+            <div class="header">
+                <div class="logo-contain">
+                    <img class="privacy-policy" src="./images/privacy-policy.png" alt="privacy-policy">
+                </div>
+                <div class="title-container">
+                    <img class="espasyo-logo" src="./images/espasyo_logo_word.png" alt="logo-word">
+                    <b>
+                        <h2 class="title">Privacy Policy</h2>
+                    </b>
+                </div>
+            </div>
+            <br><br>
+            <div class="description-container">
+                <p>
+                    <b>Espasyo</b> is a group project conducted by Saint Mary's University Information Technology
+                    students as
+                    part of their CAPSTONE requirement.
+                    This privacy notice will clarify what information will be collected and shared, as well as the
+                    purpose for such data acquisition.
+                    All acquired data from the app will be kept confidential and used strictly for offering
+                    rental-searching solutions to the users.
+                </p>
+                <br><br>
+                <h2 class="content-title">General</h2>
+                <div class="paragraph">
+                    <ul>
+                        <li>The owner is responsible for, and acts as the Data Controller for, your personal information
+                            obtained through the app.</li>
+                        <li>All Personal Data is treated in compliance with the Data Privacy Act of 2012.</li>
+                        <li>By using App or App Services, you agree to the Usage Policy, including the provisions of
+                            this
+                            Privacy Policy, and you expressly consent to the processing of your Personal Information in
+                            accordance with this Privacy Policy.</li>
+                        <li>Owner has the right to revise this Privacy Policy at any time to reflect changes in privacy
+                            practices or for other operational, legal, or regulatory reasons.</li>
+                        <br> If a User does not desire to continue using the App or App Service under the updated
+                        version of
+                        the
+                        Privacy Policy, such User may do so immediately.
+                    </ul>
+                </div>
+                <br><br>
+                <h2 class="content-title">Information We Collect</h2>
+                <ul>
+                    <li>Before accessing the app, information such as name, email, password, contact and location data
+                        should be registered for the account creation of the student.</li>
+                    <br>
+                    In the same process, landlords will also enter their name, email, password, contact and location
+                    data, as well as property details for their account creation.
+                    <br>
+                    Such data received in the app will be stored in the database with only admins and superadmins to
+                    access it.
+                </ul>
+                <br><br>
+                <h2 class="content-title">Usage of the Data Collected</h2>
+                The primary goal of collecting Personal Information is to offer Users with secure, accessible,
+                efficient, and personalised services on the App.
+                In addition, the Owner may use your Personal Information to: <br>
+                <ul>
+                    <li>Enhance the App Services to meet the requirements and preferences of the Users</li>
+                    <li>Prevent or identify unlawful, potentially illegal, or illegal actions on the App</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer"></div>
+
+        <!-- core firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <!-- SDK or firebase services -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+        <!-- firebase configuration and declarations -->
+        <script src="./js/firebaseConfig.js"></script>
+        <script src="./js/authentication.js"></script>
+
+
+        <script>
+            window.onload = noBack();
+
+            function noBack() {
+                window.history.forward();
+            }
+
+            function showSampleVariable() {
+                window.alert(getIsSuperAdmin());
+            }
+        </script>
+    </body>
+
+</html>

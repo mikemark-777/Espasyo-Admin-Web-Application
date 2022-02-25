@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Delete Admin</title>
+    <link rel="shortcut icon" type="image/jpg" href="/images/espasyo_favicon.ico" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/delete-admin.css">
+    <script src="/js/a076d05399.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <div class="delete-container">
+        <div class="delete-title">
+            <h3>Delete Admin Account</h3>
+        </div>
+        <div class="admin-infobox">
+            <img class="admin-icon" src="/images/icon_admin.png" alt="admin_avatar">
+            <div class="admin-detailsbox">
+                <div class="admin-name-container">
+                    <div class="admin-firstName" id="adminFN">
+                        <h5>User&ensp;</h5>
+                    </div>
+                    <div class="admin-lastName" id="adminLN">
+                        <h5>user</h5>
+                    </div>
+                </div>
+                <div class="admin-email" id="adminEmail">
+                    <i>user@gmail.com</i>
+                </div>
+            </div>
+        </div>
+        <div class="delete-message">
+            <div class="warning-container">
+                <h6 class="warning-word">Warning</h6>
+                Deleting this admin account cannot be undone. All of its data will be permanently deleted and the user
+                will be disabled to access the system.
+            </div><br> Are you sure you want to delete this account?
+        </div>
+        <div class="delete-buttons">
+            <button class="btn-delete-account" id="button-delete-account">Delete Account</button>
+            <button class="btn-cancel-delete" id="button-cancel-delete">Cancel</button>
+        </div>
+    </div>
+
+    <!-- core firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <!-- SDK or firebase services -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="/js/firebaseConfig.js"></script>
+    <script src="/js/authentication.js"></script>
+    <script src="/js/database.js"></script>
+    <script src="/js/delete-admin.js"></script>
+
+
+    <script>
+        window.onload = function () {
+
+            if (getIsSuperAdmin() == "false") {
+                document.getElementById("btn-manage-admin").style.display = "none";
+            }
+            checkIfHasAdminToDelete();
+            displayAdminData_deleteAdmin();
+        }
+    </script>
+
+
+</body>
+
+</html>

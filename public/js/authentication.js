@@ -15,7 +15,6 @@ function signUp() {
     var email = emailTextbox.value;
     var password = passwordTextbox.value;
 
-
     //check if inputs are empty
     if (isThereEmptyInput(firstName, lastName, email, password) != true) {
         //check email if is in correct format
@@ -112,7 +111,6 @@ function signUp() {
 
 }
 
-
 function login() {
     hideErrorInLogin();
     //get input from user
@@ -152,12 +150,13 @@ function login() {
 
                                 } else {
                                     //invalid access to other users with other codes
+                                    emailTextBox.style.border = '2px solid rgb(235, 72, 72)';
+                                    passwordTextBox.style.border = '2px solid rgb(235, 72, 72)';
                                     showError("No admin with such credentials");
                                 }
 
                             } else {
-                                window.alert("No such document!");
-                                //console.log("No such document!");
+                                console.log("No such document!");
                             }
                         }).catch((error) => {
                             console.log("Error getting document:", error);
@@ -168,10 +167,14 @@ function login() {
                         var error_message = error.message;
 
                         if (error_code == "auth/invalid-email") {
+                            emailTextBox.style.border = '2px solid rgb(235, 72, 72)';
                             showError("Invalid Email");
                         } else if (error_code == "auth/wrong-password") {
+                            passwordTextBox.style.border = '2px solid rgb(235, 72, 72)';
                             showError("Incorrect Password");
                         } else if (error_code == "auth/user-not-found") {
+                            emailTextBox.style.border = '2px solid rgb(235, 72, 72)';
+                            passwordTextBox.style.border = '2px solid rgb(235, 72, 72)';
                             showError("No admin with such credentials");
                         }
 

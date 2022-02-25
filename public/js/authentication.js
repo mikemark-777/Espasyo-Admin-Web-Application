@@ -196,7 +196,6 @@ function logout() {
         setIsSuperAdmin(false);
         removeIsSuperAdmin();
         window.alert("Logging out...");
-        window.location.replace("/index.html");
     });
 }
 
@@ -266,20 +265,18 @@ function isPasswordEmpty(password) {
 auth.onAuthStateChanged(function (user) {
     if (user != null) {
         if (isLoggingIn == false) {
-            if (window.location.pathname == "/public/index.html") {
+            if (window.location.pathname == "/index.html") {
                 if (user != null) {
-                    window.location.replace("/public/home.html");
+                    window.location.replace("/home.html");
                 } else {
                     window.history.back();
                 }
 
             }
-        } else {
-            //logging in
         }
     } else {
-        if (window.location.pathname != "/public/index.html") {
-            window.location.replace("/public/index.html");
+        if (window.location.pathname != "/index.html") {
+            window.location.replace("/index.html");
         }
     }
 });

@@ -142,8 +142,9 @@ a:hover {
 }
 
 table {
-    border-collapse: collapse;
+    width: 1200px;
     height: 300px;
+    border-collapse: collapse;
 }
 
 th,
@@ -190,9 +191,9 @@ button:hover {
 .form-container {
     width: 100%;
     height: fit-content;
-    padding-left: 35px;
+    padding-left: 70px;
     padding-top: 20px;
-    padding-right: 20px;
+    padding-right: 60px;
     margin: 10px;
 }
 
@@ -215,23 +216,22 @@ button:hover {
 }
 
 .create-new-admin-container,
-.list-of-landlord-container {
+.list-of-admin-container {
     float: left;
 }
 
-.create-new-admin-container {}
-
 #admin-list-body {
+    width: 1200px;
     height: min-content;
 }
 
-.list-of-landlord-container {
-    padding-top: 20px;
+.list-of-admin-container {
+    padding-top: 40px;
     width: 60%;
 }
 
 #table-of-admins {
-    width: 1000px;
+    width: 1200px;
     height: min-content;
 }
 
@@ -284,7 +284,7 @@ button:hover {
 .passwordBox {
     font-size: medium;
     padding: 2px;
-    width: 130px;
+    width: 120px;
 }
 
 #togglePassword {

@@ -379,7 +379,7 @@ button:hover {
 /* for error display */
 
 #error-container {
-    width: 300px;
+    width: 250px;
     background: #ff7070;
     display: none;
     padding: 10px;

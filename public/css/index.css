@@ -81,3 +81,13 @@ body {
   font-size: small;
   margin: 0px auto;
 }
+
+.privacy-policy-container {
+  margin-top: 130px;
+}
+
+.privacy-policy-container a{
+  color: #007EB1;
+  font-size: 14px;
+  font-weight: bold;
+}   

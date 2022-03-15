@@ -263,13 +263,16 @@ function isPasswordEmpty(password) {
 // ===============================================================================
 
 auth.onAuthStateChanged(function (user) {
+
     if (user != null) {
         if (isLoggingIn == false) {
             if (window.location.pathname == "/index.html") {
                 if (user != null) {
                     window.location.replace("/home.html");
                 } else {
-                    window.history.back();
+                    if (window.location.pathname != "/privacy-policy.html") {
+                        window.history.back();
+                    }
                 }
 
             }

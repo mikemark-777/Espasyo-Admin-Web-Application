@@ -15,7 +15,7 @@
 
 .privacy-container {
     width: 100%;
-    height: 1200px;
+    height: 1300px;
     padding: 50px 180px 0px 180px;
 }
 
@@ -24,15 +24,9 @@
     display: flex;
 }
 
-.privacy-policy {
-    height: 80x;
-    width: 130px;
-    margin: 20px 0px 0px -25px;
-    float: left;
-}
 
 .title {
-    font-size: 30px;
+    font-size: 40px;
     margin-top: -20px;
 }
 

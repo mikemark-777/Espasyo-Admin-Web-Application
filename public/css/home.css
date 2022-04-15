@@ -1,19 +1,22 @@
-*{
+* {
     padding: 0;
     margin: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: Calibri;
 }
-nav{
+
+nav {
     background: #007EB1;
     height: 80px;
     width: 100%;
 }
-label.logo{
+
+label.logo {
     color: white;
     font-size: 35px;
     line-height: 80px;
@@ -21,27 +24,33 @@ label.logo{
     padding: 0 100px;
     font-weight: bold;
 }
-nav ul{
-float: right;
-margin-right: 20px;
+
+nav ul {
+    float: right;
+    margin-right: 20px;
 }
-nav ul li{
-    display:inline-block;
+
+nav ul li {
+    display: inline-block;
     line-height: 80px;
     margin: 0 5px;
 }
-nav ul li a{
+
+nav ul li a {
     color: white;
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
 }
-a.active, a:hover{
+
+a.active,
+a:hover {
     background: #1b9bff;
     transition: .5s;
 }
-.checkbtn{
+
+.checkbtn {
     font-size: 30px;
     color: white;
     float: right;
@@ -50,29 +59,35 @@ a.active, a:hover{
     cursor: pointer;
     display: none;
 }
-#check{
+
+#check {
     display: none;
 
 }
+
 @media (max-width: 952px) {
-    label.logo{
+    label.logo {
         font-size: 30px;
         padding-left: 50px;
 
     }
-    nav ul li a{
+
+    nav ul li a {
         font-size: 30px;
         padding-left: 50px;
     }
-    nav ul li a{
+
+    nav ul li a {
         font-size: 16px;
     }
 }
+
 @media (max-width: 858px) {
-    .checkbtn{
+    .checkbtn {
         display: block;
     }
-    ul{
+
+    ul {
         position: fixed;
         width: 100%;
         height: 100vh;
@@ -82,25 +97,30 @@ a.active, a:hover{
         text-align: center;
         transition: all .5s;
     }
-    nav ul li{
+
+    nav ul li {
         display: block;
         margin: 50px 0;
         line-height: 30px;
     }
-    nav ul li a{
+
+    nav ul li a {
         font-size: 20px;
     }
-    a:hover,a.active{
+
+    a:hover,
+    a.active {
         background: none;
         color: #0082e6;
     }
-    #check:checked ~ ul{
+
+    #check:checked~ul {
         left: 0;
     }
 }
 
 #out:hover {
-    cursor:pointer;
+    cursor: pointer;
 }
 
 
@@ -113,45 +133,78 @@ a.active, a:hover{
 }
 
 .welcome-image {
-    height: 500px;
-    width: 800px;
-    margin-top: -8px;
-    margin-left: 55px;
+    display: block;
+    width: 100%;
+    margin-top: -17px;
+    opacity: .7;
 }
 
 .wordings {
-    margin-top: 120px;
+    margin-top: 150px;
     margin-left: 55px;
 }
 
-label.logo-name{
+label.logo-name {
     color: black;
     font-size: 80px;
     line-height: 80px;
     font-weight: bolder;
 }
 
-#description {    
+#description {
     color: #d46e00;
     margin-top: 10px;
     font-size: 24px;
     font-weight: bolder;
-    font-family:  Calibri, sans-serif;
+    font-family: Calibri, sans-serif;
 }
 
-#description-extension {    
+#description-extension {
     color: #747474;
     font-size: 20px;
     font-weight: bold;
-    font-family:  Calibri, sans-serif;
-} 
+    font-family: Calibri, sans-serif;
+}
 
 .privacy-policy-container {
     margin-top: 130px;
 }
 
-.privacy-policy-container a{
+.privacy-policy-container a {
     color: #007EB1;
     font-size: 14px;
     font-weight: bold;
-}   
+}
+
+@media only screen and (max-width: 768px) {
+
+    .welcome-container {
+        width: auto;
+    }
+
+    .welcome-image {
+        display: block;
+    }
+
+    label.logo-name {
+        color: black;
+        font-size: 60px;
+        line-height: 80px;
+    }
+
+    #description {
+        font-size: 20px;
+    }
+
+    #description-extension {
+        font-size: 18px;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .welcome-image {
+        display: none;
+        width: 50%;
+    }
+}

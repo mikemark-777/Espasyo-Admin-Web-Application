@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/change-admin-email.css">
     <script src="/js/a076d05399.js"></script>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
@@ -44,7 +44,8 @@
         <div class="change-email-message">
             <div class="info-container">
                 <h6 class="info-word">Information</h6>
-                Make sure to enter an existing email. An email verification will be sent to the email provided to verify its validity.
+                Make sure to enter an existing email. An email verification will be sent to the email provided to verify
+                its validity.
             </div><br> Are you sure you want to change the existing email?
         </div>
         <div class="change-buttons">
@@ -63,10 +64,13 @@
     <script src="/js/change-email.js"></script>
     <script src="/js/database.js"></script>
 
-
+    <!-- bootstrap declaration js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 
     <script>
-        window.onload = function() {
+        window.onload = function () {
 
             //will check if the logged in user is an admin or superadmin
             if (getIsSuperAdmin() == "false") {

@@ -24,8 +24,6 @@ function isThereEmptyInLogin(email, password) {
     }
 }
 
-
-
 function isEmailLoginEmpty(email) {
     if (email == null) {
         return true;

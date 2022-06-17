@@ -1,5 +1,8 @@
-//for tab manipulation =================================
+// for testing downloading CSV or Excel file
+var propertiesForImport = null;
+var landlordsForImport = null;
 
+//for tab manipulation =================================
 var tabButtons = document.querySelectorAll(".tabContainer .buttonContainer button");
 var tabPanels = document.querySelectorAll(".tabContainer  .tabPanel");
 
@@ -43,6 +46,10 @@ function showLandlordList() {
 var propertiesTBody = document.getElementById('property-list-body');
 
 function renderAllPropertiesToTable(properties, landlords) {
+
+    propertiesForImport = properties;
+    landlordsForImport = landlords;
+
     propertiesTBody.innerHTML = "";
     var count = 0;
     properties.forEach(property => {
@@ -116,4 +123,67 @@ function renderLandlordToTable(count, firstName, lastName, email, phoneNumber) {
     trow.appendChild(td4);
     trow.appendChild(td5);
     landlordsTBody.append(trow);
+}
+
+//testing if the properties has been loaded
+function exportReportAsCSV() {
+    if (propertiesForImport == null) {
+        alert("Properties is still loading...");
+    } else {
+
+        var convertedArray = convertPropertyObjectToArray(propertiesForImport, landlordsForImport);
+
+        var csv = 'Property Name, Address, Property Type, Landlord, Landlord PhoneNo.\n';
+        convertedArray.forEach(function (row) {
+            csv += row.join(',');
+            csv += "\n";
+        });
+
+        var hiddenElement = document.createElement('a');
+        hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+        hiddenElement.target = '_blank';
+        hiddenElement.download = 'Espasyo-Report-' + getExportDate() + '.csv';
+        hiddenElement.click();
+    }
+}
+
+function getExportDate() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    return mm + '-' + dd + '-' + yyyy;
+}
+
+function convertPropertyObjectToArray(properties, landlords) {
+    var count = 0;
+    var convertedArray = [];
+
+    properties.forEach(function (property) {
+
+        var landlordName = "";
+        var landlordPhoneNumber = "";
+        landlords.forEach(function (landlord) {
+            if (landlord.landlordID == property.owner) {
+                landlordName = landlord.firstName + " " + landlord.lastName;
+                landlordPhoneNumber = "0" + landlord.phoneNumber;
+            }
+        });
+
+        //this will remove the commas of the address to not mistakenly convert by CSV converter as another column
+        const addressWithoutComma = property.address.replace(/,/g, '');
+        convertedArray[count] =
+            [
+                property.name,
+                addressWithoutComma,
+                property.propertyType,
+                landlordName,
+                landlordPhoneNumber
+            ];
+        count += 1;
+    });
+
+    return convertedArray;
+
 }

@@ -69,10 +69,12 @@ a:hover {
         font-size: 30px;
         padding-left: 50px;
     }
+
     nav ul li a {
         font-size: 30px;
         padding-left: 50px;
     }
+
     nav ul li a {
         font-size: 16px;
     }
@@ -82,6 +84,7 @@ a:hover {
     .checkbtn {
         display: block;
     }
+
     ul {
         position: fixed;
         width: 100%;
@@ -92,20 +95,24 @@ a:hover {
         text-align: center;
         transition: all .5s;
     }
+
     nav ul li {
         display: block;
         margin: 50px 0;
         line-height: 30px;
     }
+
     nav ul li a {
         font-size: 20px;
     }
+
     a:hover,
     a.active {
         background: none;
         color: #0082e6;
         text-decoration: none;
     }
+
     #check:checked~ul {
         left: 0;
     }

@@ -133,7 +133,7 @@ function exportReportAsCSV() {
 
         var convertedArray = convertPropertyObjectToArray(propertiesForImport, landlordsForImport);
 
-        var csv = 'Property Name, Address, Property Type, Landlord, Landlord PhoneNo.\n';
+        var csv = 'Property Name, Address, Property Type, Landlord, Landlord PhoneNo., Landlord Email\n';
         convertedArray.forEach(function (row) {
             csv += row.join(',');
             csv += "\n";
@@ -164,10 +164,12 @@ function convertPropertyObjectToArray(properties, landlords) {
 
         var landlordName = "";
         var landlordPhoneNumber = "";
+        var landlordEmail = "";
         landlords.forEach(function (landlord) {
             if (landlord.landlordID == property.owner) {
                 landlordName = landlord.firstName + " " + landlord.lastName;
                 landlordPhoneNumber = "0" + landlord.phoneNumber;
+                landlordEmail = landlord.email;
             }
         });
 
@@ -179,11 +181,11 @@ function convertPropertyObjectToArray(properties, landlords) {
                 addressWithoutComma,
                 property.propertyType,
                 landlordName,
-                landlordPhoneNumber
+                landlordPhoneNumber,
+                landlordEmail
             ];
         count += 1;
     });
 
     return convertedArray;
-
 }
